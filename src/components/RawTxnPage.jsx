@@ -10,7 +10,8 @@ const RawTxnPage = ({ authToken, handleLogout }) => {
 	const [orderResponse, setOrderResponse] = useState(null);
 	const [error, setError] = useState(null);
 	const [activeSection, setActiveSection] = useState(null);
-	const { executeRawTransaction, getRawTransactionStatus } = useOkto();
+	const { executeRawTransaction, getRawTransactionStatus, getWallets } =
+		useOkto();
 	const [transferData, setTransferData] = useState({
 		network_name: "",
 		transaction: "",
