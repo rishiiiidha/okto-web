@@ -5,6 +5,12 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
 	plugins: [react()],
 	server: {
-		open: true, // Automatically opens the app in the browser
+		proxy: {
+			"/api": {
+				target: "https://sandbox-api.okto.tech",
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/api/, ""),
+			},
+		},
 	},
 });

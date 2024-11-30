@@ -10,6 +10,7 @@ import LoginPage from "./components/LoginPage";
 import HomePage from "./components/HomePage";
 import RawTxnPage from "./components/RawTxnPage";
 import WidgetPage from "./components/WidgetPage";
+import TodoListTransaction from "./components/TodoTxnPage"; 
 
 const OKTO_CLIENT_API_KEY = import.meta.env.VITE_OKTO_CLIENT_API_KEY;
 
@@ -59,6 +60,20 @@ function App() {
 						element={
 							authToken ? (
 								<WidgetPage authToken={authToken} handleLogout={handleLogout} />
+							) : (
+								<Navigate to='/' />
+							)
+						}
+					/>
+					<Route
+						path='/todo'
+						element={
+							authToken ? (
+								<TodoListTransaction
+									authToken={authToken}
+									contractAddress='5b3eff8ec600a819a94ab5ae27c2d8cfd1dbc0f58aca6e31c9d5455d3ec6c090'
+									handleLogout={handleLogout}
+								/>
 							) : (
 								<Navigate to='/' />
 							)

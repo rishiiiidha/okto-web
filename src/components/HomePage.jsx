@@ -184,6 +184,12 @@ const handleTransferTokens = async (e) => {
 				>
 					Go to Widgets
 				</button>
+				<button
+					onClick={() => navigateTo("/todo")}
+					style={{ padding: "10px 20px", cursor: "pointer" }}
+				>
+					To do Transaction
+				</button>
 			</div>
 		</div>
 	);
